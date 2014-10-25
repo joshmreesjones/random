@@ -1,0 +1,60 @@
+<!doctype html>
+
+<html>
+	<head>
+		<title>BUMP!</title>
+
+		<style>
+			#bump {
+				font-family: Helvetica, Arial, sans-serif;
+				font-weight: bold;
+				font-size: 200px;
+
+				/* Position relative to the viewport */
+				position: fixed;
+
+				color: rgb(250, 250, 190);
+
+				/* Transition color, top and left for .5 seconds */
+				transition: color .5s, top .5s, left .5s;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div id="bump">
+			BUMP!
+		</div>
+
+		<script>
+			var bump = document.getElementById("bump");
+			
+			function getRandomInteger(min, max) {
+				return Math.floor(Math.random() * (max - min) + min);
+			}
+			
+			window.setInterval(function() {
+				// while the color is too bright (avg. above 230) or they don't exist
+				while (!(r && g && b) || r + b + g > (230 * 3)) {
+					// generate random color
+					var r = getRandomInteger(0, 255),
+						g = getRandomInteger(0, 255),
+						b = getRandomInteger(0, 255);
+				}
+
+				// apply new color
+				// Note: a transition is applied to color in CSS
+				bump.style.color = "rgb(" + r + "," + g + "," + b + ")";
+
+				// generate random offsets
+				offsetX = getRandomInteger(0, window.innerWidth - bump.offsetWidth);
+				offsetY = getRandomInteger(0, window.innerHeight - bump.offsetHeight);
+
+				// apply new offsets
+				// Note: a transition is applied to top and left in CSS
+				bump.style.left = offsetX + "px";
+				bump.style.top  = offsetY + "px";
+			}, 500);
+		</script>
+	</body>
+</html>

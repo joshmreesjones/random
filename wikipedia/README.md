@@ -1,0 +1,1 @@
+This is a Wikipedia web scraper whose goal is to build a large directed graph of Wikipedia articles whose nodes are pages and whose edges are links from one page to another. It uses BeautifulSoup to parse HTML.

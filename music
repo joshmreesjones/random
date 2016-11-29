@@ -1,0 +1,31 @@
+music list | get OPTIONS...
+
+
+
+list
+    edit <name>
+    add <artist> [genre]
+
+    <name> values
+        master - the master list
+        new - artists I haven't listened to yet
+        genres - genres I listen to
+
+get
+    master
+    new
+    genre
+
+get <existing | new> <all | genre>
+    Get random artist from all artists
+    Get random new artist from all new artists
+    Get random artist from genre/category
+    Get random new artist from new artists in genre/category
+    Get random genre/category
+
+
+
+Format for artist/genre list?
+
+
+Add genres/categories to existing artists
